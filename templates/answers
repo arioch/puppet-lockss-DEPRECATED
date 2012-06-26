@@ -1,0 +1,20 @@
+<%= scope.lookupvar('lockss::params::lockss_hostname') %>
+<%= scope.lookupvar('lockss::params::lockss_ipaddr') %>
+<%= scope.lookupvar('lockss::params::lockss_nat') %>
+<%= scope.lookupvar('lockss::params::lockss_access_subnet') %>
+<%= scope.lookupvar('lockss::params::lockss_v3_port') %>
+<%= scope.lookupvar('lockss::params::lockss_proxy_port') %>
+<%= scope.lookupvar('lockss::params::lockss_ui_port') %>
+<%= scope.lookupvar('lockss::params::lockss_mailhub') %>
+<%= scope.lookupvar('lockss::params::lockss_mailhub_auth') %>
+<%= scope.lookupvar('lockss::params::lockss_email') %>
+<%= scope.lookupvar('lockss::params::lockss_java_cmd') %>
+<%= scope.lookupvar('lockss::params::lockss_java_switches') %>
+<%= scope.lookupvar('lockss::params::lockss_props_url') %>
+<%= scope.lookupvar('lockss::params::lockss_props_proxy') %>
+<%= scope.lookupvar('lockss::params::lockss_test_group') %>
+<%= scope.lookupvar('lockss::params::lockss_disk_paths') %>
+<%= scope.lookupvar('lockss::params::lockss_tmpdir') %>
+<%= scope.lookupvar('lockss::params::lockss_admin_user') %>
+test
+Y

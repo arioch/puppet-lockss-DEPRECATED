@@ -1,0 +1,47 @@
+#!/usr/bin/perl
+use strict;
+
+if ($ENV{USER} ne 'root') {
+	print "You must be root to run this tool.\n";
+	exit;
+}
+
+print "Enter subnet(s) in CIDR notation that are allowed to SSH in: ";
+my $subnets = <STDIN>;
+my @subnets = grep { $_ !~ /^(\s*|,)$/  } split(/(\s+|,)/, $subnets);
+
+print "Should the LOCKSS team be allowed to SSH? (Recommended): [Y]: ";
+my $answer = lc(<STDIN>);
+
+if (($answer =~ /^$/) || ($answer =~ /^\s*y/)) {
+	push(@subnets, "171.66.236.0/26");
+	push(@subnets, "171.66.194.208/29");
+}
+
+
+# Alright, inject the rules into the iptables file
+
+my @payload;
+foreach my $s (@subnets) {
+	push(@payload, "-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp -s $s --dport 22 -j ACCEPT");
+}
+my $injected = 0;
+
+
+open (IN, '< /etc/sysconfig/iptables') or die "Fatal error: $!";
+	my @contents = <IN>;
+close(IN);
+
+
+open (OUT, '> /etc/sysconfig/iptables') or die "Fatal error: $!";
+	foreach my $line (@contents) {
+		if ($line =~ /--dport\s*22\s*/) {
+			print OUT join("\n", @payload) . "\n" if not $injected;
+			$injected = 1;
+			next;
+		}
+		print OUT $line;
+	}
+close(OUT);
+
+print "Please reload the Iptables configuration. Run: service iptables restart\n";

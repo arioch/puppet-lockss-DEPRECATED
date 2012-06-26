@@ -1,0 +1,2 @@
+#!/bin/sh
+yum -yq upgrade lockss-daemon

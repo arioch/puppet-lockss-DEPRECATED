@@ -1,0 +1,30 @@
+#
+# Managed with Puppet
+#
+
+LOCKSS_CONFIG_VERSION=<%= scope.lookupvar('lockss::params::lockss_config_version') %>
+LOCKSS_USER="<%= scope.lookupvar('lockss::params::lockss_user') %>"
+LOCKSS_HOSTNAME=<%= scope.lookupvar('lockss::params::lockss_hostname') %>
+LOCKSS_IPADDR=<%= scope.lookupvar('lockss::params::lockss_ipaddr') %>
+LOCKSS_EXTERNAL_IPADDR=<%= scope.lookupvar('lockss::params::lockss_external_ipaddr') %>
+LOCKSS_V3_PORT=<%= scope.lookupvar('lockss::params::lockss_v3_port') %>
+LOCKSS_ACCESS_SUBNET=<%= scope.lookupvar('lockss::params::lockss_access_subnet') %>
+LOCKSS_MAILHUB=<%= scope.lookupvar('lockss::params::lockss_mailhub') %>
+LOCKSS_MAILHUB_USER=<%= scope.lookupvar('lockss::params::lockss_mailhub_user') %>
+LOCKSS_MAILHUB_PASSWORD=<%= scope.lookupvar('lockss::params::lockss_mailhub_password') %>
+LOCKSS_EMAIL=<%= scope.lookupvar('lockss::params::lockss_email') %>
+LOCKSS_JAVA_CMD=<%= scope.lookupvar('lockss::params::lockss_java_cmd') %>
+LOCKSS_JAVA_SWITCHES=<%= scope.lookupvar('lockss::params::lockss_java_switches') %>
+LOCKSS_JAVA_HEAP=<%= scope.lookupvar('lockss::params::lockss_java_heap') %>
+LOCKSS_PROPS_URL=<%= scope.lookupvar('lockss::params::lockss_props_url') %>
+LOCKSS_PROPS_PROXY=<%= scope.lookupvar('lockss::params::lockss_props_proxy') %>
+LOCKSS_PROPS_SERVER_AUTHENTICATE_KEYSTORE=<%= scope.lookupvar('lockss::params::lockss_props_keystore') %>
+LOCKSS_TEST_GROUP=<%= scope.lookupvar('lockss::params::lockss_test_group') %>
+LOCKSS_DISK_PATHS=<%= scope.lookupvar('lockss::params::lockss_disk_paths') %>
+LOCKSS_ADMIN_USER=<%= scope.lookupvar('lockss::params::lockss_admin_user') %>
+LOCKSS_ADMIN_PASSWD=<%= scope.lookupvar('lockss::params::lockss_admin_passwd') %>
+LOCKSS_PROXY_PORT=<%= scope.lookupvar('lockss::params::lockss_proxy_port') %>
+LOCKSS_UI_PORT=<%= scope.lookupvar('lockss::params::lockss_ui_port') %>
+LOCKSS_TMPDIR=<%= scope.lookupvar('lockss::params::lockss_tmpdir') %>
+LOCKSS_CLEAR_TMPDIR=<%= scope.lookupvar('lockss::params::lockss_clear_tmpdir') %>
+
