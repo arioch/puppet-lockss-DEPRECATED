@@ -28,22 +28,5 @@ describe 'lockss::service' do
       end
     end
   end
-
-  deb_distros.each do |os|
-    describe "on #{os}" do
-      let(:facts) do
-        {
-          'operatingsystem' => os
-        }
-      end
-
-      it do
-        expect {
-          should include_class('lockss')
-          should include_class('lockss::service')
-        }.to raise_error(Puppet::Error, /target operatingsystem is not supported/)
-      end
-    end
-  end
 end
 

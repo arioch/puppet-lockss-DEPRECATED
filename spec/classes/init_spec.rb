@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe 'lockss' do
   let(:title) { 'lockss' }
-  let(:facts) {
-    {
-      :environment => 'development',
-    }
-  }
+#  let(:facts) {
+#    {
+#      :environment => 'development',
+#    }
+#  }
 
   rpm_distros = [ 'RedHat', 'CentOS', 'Scientific', 'OEL', 'Amazon' ]
   deb_distros = [ 'Debian', 'Ubuntu' ]
@@ -19,12 +19,15 @@ describe 'lockss' do
         }
       end
 
-      it { should include_class('lockss') }
-      it { should include_class('lockss::params') }
-      it { should include_class('lockss::preinstall') }
-      it { should include_class('lockss::install') }
-      it { should include_class('lockss::config') }
-      it { should include_class('lockss::service') }
+      it do
+        should include_class('lockss')
+        should include_class('lockss::params')
+        should include_class('lockss::preinstall')
+        should include_class('lockss::install')
+        should include_class('lockss::config')
+        should include_class('lockss::service')
+      end
+
     end
   end
 

@@ -19,8 +19,10 @@ describe 'lockss::preinstall' do
         }
       end
 
-      it { should include_class('lockss::params') }
-      it { should contain_class('lockss::preinstall') }
+      it do
+        should include_class('lockss::params')
+        should contain_class('lockss::preinstall')
+      end
     end
   end
 
